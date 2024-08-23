@@ -5,8 +5,8 @@ operatives: list = ['+', '-', '*', '/']
 def getResponse(user_input: str) -> str:
     lowered: str = user_input.lower()
 
-    if lowered == '':
-        return 'Meow'
+    if 'meow' in lowered:
+        return random.choice(['Meow', 'Meow >:3', 'Meow :>', 'Meow :3', 'Meow :O', 'Meow :P', 'Meow :D'])
     elif 'tere' in lowered:
         return 'mine ära ma tahan magada'
     elif 'mitu' in lowered:
@@ -17,5 +17,3 @@ def getResponse(user_input: str) -> str:
         oprativechoice = random.randint(0, 3)
         answer: list = [n1 + n2, n1 - n2, n1 * n2, n1 / n2] 
         return f'{n1} {operatives[oprativechoice]} {n2} = {answer[oprativechoice]}'
-    else:
-        return '' 
