@@ -1,4 +1,5 @@
 import random
+from hypixel_api_addition import getHypixelRank
 
 operatives: list = ['+', '-', '*', '/']
 
@@ -17,3 +18,8 @@ def getResponse(user_input: str) -> str:
         oprativechoice = random.randint(0, 3)
         answer: list = [n1 + n2, n1 - n2, n1 * n2, n1 / n2] 
         return f'{n1} {operatives[oprativechoice]} {n2} = {answer[oprativechoice]}'
+    elif 'war crimes' in lowered:
+        return random.choice(['Nowpee uwu :3', 'Japanse or bruken knees like my friend said ;>', 'no uwu... maybe...', 'uwu :3', 'uwu :D'])
+    elif 'hypixel rank ' in lowered:
+        lowered = lowered.replace('hypixel rank ', '')
+        getHypixelRank(lowered)
