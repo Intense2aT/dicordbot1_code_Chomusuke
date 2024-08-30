@@ -1,3 +1,4 @@
 /.env
 /__pycache__
 apikeys.py
+hypixel_apikey.py

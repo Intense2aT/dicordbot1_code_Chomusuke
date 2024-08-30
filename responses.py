@@ -1,5 +1,5 @@
 import random
-from hypixel_api_addition import getHypixelRank
+from hypixel_api_addition import getHypixelData
 
 operatives: list = ['+', '-', '*', '/']
 
@@ -20,6 +20,16 @@ def getResponse(user_input: str) -> str:
         return f'{n1} {operatives[oprativechoice]} {n2} = {answer[oprativechoice]}'
     elif 'war crimes' in lowered:
         return random.choice(['Nowpee uwu :3', 'Japanse or bruken knees like my friend said ;>', 'no uwu... maybe...', 'uwu :3', 'uwu :D'])
-    elif 'hypixel rank ' in lowered:
-        lowered = lowered.replace('hypixel rank ', '')
-        getHypixelRank(lowered)
+    elif 'hydata ' in lowered:
+        lowered = lowered.replace('hydata ', '')
+        if 'bedwars ' in lowered:
+            lowered = lowered.replace('bedwars ', '')
+            return getHypixelData("Bedwars", lowered)
+        elif 'arcade ' in lowered:
+            lowered = lowered.replace('arcade ', '')
+            return getHypixelData("Arcade", lowered)
+        elif 'skywars ' in lowered:
+            lowered = lowered.replace('skywars ', '')
+            return getHypixelData("SkyWars", lowered)
+        else:
+            return 'game not specified or not implemented'
